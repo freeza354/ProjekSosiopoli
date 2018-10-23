@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 222238771913270840}
   - component: {fileID: 114589892528547096}
   m_Layer: 5
-  m_Name: QuestionText38
+  m_Name: QuestionText48
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -538,9 +538,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Kondisi yang aman dari ancaman pihak luar, dinamis dan teratur dalam menjalani\r
-    kehidupan dimana setiap\r individu bertindak sesuai hak dan kewajibannya, merupakan
-    unsur \uF02Dunsur terwujudnya...\t\t\t\t\r\n"
+  m_Text: "Agung telah menyelesaikan pendidikan SMA, melalui bimbingan konseling ia
+    disarankan untuk melanjutkan ke jenjang lebih tinggi mengambil rumpun ilmu pengetahuan
+    sosial. Ia lalu melanjutkan ke perguruan tinggi mengambil jurusan sosiologi. Kegiatan
+    yang dilakukan Agung\r termasuk tipe sosialisasi\r..."
 --- !u!114 &114888787236879504
 MonoBehaviour:
   m_ObjectHideFlags: 1

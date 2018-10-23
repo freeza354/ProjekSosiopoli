@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 222238771913270840}
   - component: {fileID: 114589892528547096}
   m_Layer: 5
-  m_Name: QuestionText38
+  m_Name: QuestionText47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -538,9 +538,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Kondisi yang aman dari ancaman pihak luar, dinamis dan teratur dalam menjalani\r
-    kehidupan dimana setiap\r individu bertindak sesuai hak dan kewajibannya, merupakan
-    unsur \uF02Dunsur terwujudnya...\t\t\t\t\r\n"
+  m_Text: "Bayi lahir ke dunia sebagai organisme kecil yang penuh dengan kebutuhan
+    fisik dan menyita segenap aktifitas orang tuanya. Ia lahir dalam keadaan tidak
+    mengetahui apa-apa.Dengan sabar orang tua melakukan\r proses sosialisasi agar
+    nanti anaknya bertingkah laku sesuai dengan standar yang terdapat dalam lingkungan
+    sosial dan kebudayaannya. Contoh di atas\r menunjukkan bentuk sosialisasi\r...\n"
 --- !u!114 &114888787236879504
 MonoBehaviour:
   m_ObjectHideFlags: 1
