@@ -10,10 +10,9 @@ public class GameControl : MonoBehaviour {
     public static int diceSideThrown = 0;
     public static int player1StartWaypoint = 0;
     public static int player2StartWaypoint = 0;
- 
+
     public static bool gameOver = false;
-    public static bool turnOverPlayer1 = false;
-    public static bool turnOverPlayer2 = false;
+    public static bool turnOverPlayer1 = false, turnOverPlayer2 = false;
 
     // Use this for initialization
     void Start () {
@@ -92,52 +91,139 @@ public class GameControl : MonoBehaviour {
         }
     }
 
-    //public void Button1()
-    //{
-    //    if (randomAnswer == 1)
-    //    {
-    //        player1Score = 10;
-    //    }
-    //    else
-    //    {
-    //        player1Score = -10;
-    //    }
-    //}
+    public void buttonAnswer1()
+    {
+        if (Data.answer == 1)
+        {
+            if (turnOverPlayer1)
+            {
+                FollowThePath.CheckAnswerWhenTimeRunsOut1 = false;
+                Data.answerPlayer1 += 10;
+            }
+            else if (turnOverPlayer2)
+            {
+                FollowThePath.CheckAnswerWhenTimeRunsOut2 = false;
+                Data.answerPlayer2 += 10;
+            }
+        }
+        else
+        {
+            if (turnOverPlayer1)
+            {
+                FollowThePath.CheckAnswerWhenTimeRunsOut1 = false;
+                Data.answerPlayer1 -= 10;
+            }
+            else if (turnOverPlayer2)
+            {
+                FollowThePath.CheckAnswerWhenTimeRunsOut2 = false;
+                Data.answerPlayer2 -= 10;
+            }
+        }
+    }
 
-    //public void Button2()
-    //{
-    //    if (randomAnswer == 2)
-    //    {
-    //        player1Score = 10;
-    //    }
-    //    else
-    //    {
-    //        player1Score = -10;
-    //    }
-    //}
+    public void buttonAnswer2()
+    {
+        if (Data.answer == 2)
+        {
+            if (turnOverPlayer1)
+            {
+                FollowThePath.CheckAnswerWhenTimeRunsOut1 = false;
+                Data.answerPlayer1 += 10;
+            }
+            else if (turnOverPlayer2)
+            {
+                FollowThePath.CheckAnswerWhenTimeRunsOut2 = false;
+                Data.answerPlayer2 += 10;
+            }
+        }
+        else
+        {
+            if (turnOverPlayer1)
+            {
+                Data.answerPlayer1 -= 10;
+            }
+            else if (turnOverPlayer2)
+            {
+                Data.answerPlayer2 -= 10;
+            }
+        }
+    }
 
-    //public void Button3()
-    //{
-    //    if (randomAnswer == 3)
-    //    {
-    //        player1Score = 10;
-    //    }
-    //    else
-    //    {
-    //        player1Score = -10;
-    //    }
-    //}
+    public void buttonAnswer3()
+    {
+        if (Data.answer == 3)
+        {
+            if (turnOverPlayer1)
+            {
+                Data.answerPlayer1 += 10;
+            }
+            else if (turnOverPlayer2)
+            {
+                Data.answerPlayer2 += 10;
+            }
+        }
+        else
+        {
+            if (turnOverPlayer1)
+            {
+                Data.answerPlayer1 -= 10;
+            }
+            else if (turnOverPlayer2)
+            {
+                Data.answerPlayer2 -= 10;
+            }
+        }
+    }
 
-    //public void Button4()
-    //{
-    //    if (randomAnswer == 4)
-    //    {
-    //        player1Score = 10;
-    //    }
-    //    else
-    //    {
-    //        player1Score = -10;
-    //    }
-    //}
+    public void buttonAnswer4()
+    {
+        if (Data.answer == 4)
+        {
+            if (turnOverPlayer1)
+            {
+                Data.answerPlayer1 += 10;
+            }
+            else if (turnOverPlayer2)
+            {
+                Data.answerPlayer2 += 10;
+            }
+        }
+        else
+        {
+            if (turnOverPlayer1)
+            {
+                Data.answerPlayer1 -= 10;
+            }
+            else if (turnOverPlayer2)
+            {
+                Data.answerPlayer2 -= 10;
+            }
+        }
+    }
+    public void buttonAnswer5()
+    {
+        if (Data.answer == 5)
+        {
+            if (turnOverPlayer1)
+            {
+                Data.answerPlayer1 += 10;
+            }
+            else if (turnOverPlayer2)
+            {
+                Data.answerPlayer2 += 10;
+            }
+        }
+        else
+        {
+            if (turnOverPlayer1)
+            {
+                Data.answerPlayer1 -= 10;
+            }
+            else if (turnOverPlayer2)
+            {
+                Data.answerPlayer2 -= 10;
+            }
+        }
+    }
 
 }
