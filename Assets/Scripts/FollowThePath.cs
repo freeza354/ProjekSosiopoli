@@ -24,10 +24,11 @@ public class FollowThePath : MonoBehaviour
     public int waypointIndex = 0;
 
     public static int randomAnswer, randomQuestion, checkPlayer;
-    public static float timeRemaining, timeStart = 10f;
+    public static float timeRemaining, timeStart = 40f;
 
     public static bool timerLoop = false;
     public static bool nextPlayerTurn = false;
+    public static bool questionOver = false;
 
     public bool moveAllowed = false;
 
@@ -66,9 +67,34 @@ public class FollowThePath : MonoBehaviour
 
         questionTimer.value = CalculateSliderValue();
 
-        if (timerLoop)
+        if (questionOver)
         {
+            Destroy(questionTemporary);
+            popupParent.SetActive(false);
+            questionOver = false;
+            
+            if (checkPlayer == 1)
+            {
+                Debug.Log("This code called min1 " + Data.answerPlayer1);
+                GameControl.turnOverPlayer1 = false;
+            }
 
+            else if (checkPlayer == 2)
+            {
+                Debug.Log("This code called min2 " + Data.answerPlayer2);
+                GameControl.turnOverPlayer2 = false;
+            }
+
+            dice.SetActive(true);
+
+            ResetTimer();
+
+            Debug.Log("Is this called?");
+
+        }
+
+        if (timerLoop && popupParent.activeInHierarchy)
+        {
             timeRemaining -= Time.deltaTime;
             if (timeRemaining < 0)
                 timerLoop = false;
@@ -76,10 +102,7 @@ public class FollowThePath : MonoBehaviour
 
         if (timeRemaining <= 0)
         {
-            timeRemaining = timeStart;            
-            Destroy(questionTemporary);
-            popupParent.SetActive(false);
-
+            
             if (checkPlayer == 1)
             {                
                 Data.answerPlayer1 -= 10;
@@ -95,8 +118,20 @@ public class FollowThePath : MonoBehaviour
             }
 
             dice.SetActive(true);
+
+            ResetTimer();
+
+            Destroy(questionTemporary);
+            popupParent.SetActive(false);
+
         }
 
+    }
+
+    private void ResetTimer()
+    {
+        timeRemaining = timeStart;
+        Debug.Log("this function is called " + timeRemaining);
     }
 
     private void Move()

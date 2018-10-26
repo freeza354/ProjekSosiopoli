@@ -21,12 +21,14 @@ public class Data : MonoBehaviour{
             if (FollowThePath.checkPlayer == 1)
             {
                 Debug.Log("This code is called 1+");
-                Data.answerPlayer1 += 10;
+                answerPlayer1 += 10;
+                FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
                 Debug.Log("This code is called 2+");
-                Data.answerPlayer2 += 10;
+                answerPlayer2 += 10;
+                FollowThePath.questionOver = true;
             }
         }
         else
@@ -35,11 +37,13 @@ public class Data : MonoBehaviour{
             {
                 Debug.Log("This code is called 1-");
                 answerPlayer1 -= 10;
+                FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
                 Debug.Log("This code is called 2-");
                 answerPlayer2 -= 10;
+                FollowThePath.questionOver = true;
             }
         }
     }
@@ -51,10 +55,12 @@ public class Data : MonoBehaviour{
             if (FollowThePath.checkPlayer == 1)
             {
                 answerPlayer1 += 10;
+                FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
                 answerPlayer2 += 10;
+                FollowThePath.questionOver = true;
             }
         }
         else
@@ -62,10 +68,12 @@ public class Data : MonoBehaviour{
             if (FollowThePath.checkPlayer == 1)
             {
                 answerPlayer1 -= 10;
+                FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
                 answerPlayer2 -= 10;
+                FollowThePath.questionOver = true;
             }
         }
     }
@@ -79,11 +87,13 @@ public class Data : MonoBehaviour{
             {
                 Debug.Log("This code is called 1+");
                 answerPlayer1 += 10;
+                FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
                 Debug.Log("This code is called 2+");
                 answerPlayer2 += 10;
+                FollowThePath.questionOver = true;
             }
         }
         else
@@ -92,11 +102,13 @@ public class Data : MonoBehaviour{
             {
                 Debug.Log("This code is called");
                 answerPlayer1 -= 10;
+                FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
                 Debug.Log("This code is called");
                 answerPlayer2 -= 10;
+                FollowThePath.questionOver = true;
             }
         }
     }
@@ -108,10 +120,12 @@ public class Data : MonoBehaviour{
             if (FollowThePath.checkPlayer == 1)
             {
                 answerPlayer1 += 10;
+                FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
                 answerPlayer2 += 10;
+                FollowThePath.questionOver = true;
             }
         }
         else
@@ -119,10 +133,12 @@ public class Data : MonoBehaviour{
             if (FollowThePath.checkPlayer == 1)
             {
                 answerPlayer1 -= 10;
+                FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
                 answerPlayer2 -= 10;
+                FollowThePath.questionOver = true;
             }
         }
     }
@@ -133,10 +149,12 @@ public class Data : MonoBehaviour{
             if (FollowThePath.checkPlayer == 1)
             {
                 answerPlayer1 += 10;
+                FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
                 answerPlayer2 += 10;
+                FollowThePath.questionOver = true;
             }
         }
         else
@@ -144,10 +162,12 @@ public class Data : MonoBehaviour{
             if (FollowThePath.checkPlayer == 1)
             {
                 answerPlayer1 -= 10;
+                FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
                 answerPlayer2 -= 10;
+                FollowThePath.questionOver = true;
             }
         }
     }
