@@ -96,13 +96,6 @@ public class FollowThePath : MonoBehaviour
 
             dice.SetActive(true);
         }
-        //else
-        //{
-        //    if ()
-        //    {
-        //        Destroy(questionTemporary);
-        //    }
-        //}
 
     }
 

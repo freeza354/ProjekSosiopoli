@@ -7,8 +7,6 @@ public class GameControl : MonoBehaviour {
 
     private static GameObject player1, player2;
 
-    public Text scorePlayer1, scorePlayer2;
-
     public static int diceSideThrown = 0;
     public static int player1StartWaypoint = 0;
     public static int player2StartWaypoint = 0;
@@ -37,10 +35,6 @@ public class GameControl : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
-        scorePlayer1.text = "" + Data.answerPlayer1;
-        scorePlayer1.text = "" + Data.answerPlayer2;
-
         if (player1.GetComponent<FollowThePath>().waypointIndex > 
             player1StartWaypoint + diceSideThrown)
         {
@@ -98,143 +92,5 @@ public class GameControl : MonoBehaviour {
         }
     }
 
-    public void buttonAnswer1()
-    {
-        if (Data.answer == 1)
-        {
-            Debug.Log("This code is called A");
-            if (FollowThePath.checkPlayer == 1)
-            {
-                Debug.Log("This code is called 1+");
-                Data.answerPlayer1 += 10;
-            }
-            else if (FollowThePath.checkPlayer == 2)
-            {
-                Debug.Log("This code is called 2+");
-                Data.answerPlayer2 += 10;
-            }
-        }
-        else
-        {
-            if (FollowThePath.checkPlayer == 1)
-            {
-                Debug.Log("This code is called 1-");
-                Data.answerPlayer1 -= 10;
-            }
-            else if (FollowThePath.checkPlayer == 2)
-            {
-                Debug.Log("This code is called 2-");
-                Data.answerPlayer2 -= 10;
-            }
-        }
-    }
-
-    public void buttonAnswer2()
-    {
-        if (Data.answer == 2)
-        {
-            if (FollowThePath.checkPlayer == 1)
-            {                
-                Data.answerPlayer1 += 10;
-            }
-            else if (FollowThePath.checkPlayer == 2)
-            {
-                Data.answerPlayer2 += 10;
-            }
-        }
-        else
-        {
-            if (FollowThePath.checkPlayer == 1)
-            {
-                Data.answerPlayer1 -= 10;
-            }
-            else if (FollowThePath.checkPlayer == 2)
-            {
-                Data.answerPlayer2 -= 10;
-            }
-        }
-    }
-
-    public void buttonAnswer3()
-    {
-        if (Data.answer == 3)
-        {
-            Debug.Log("This code is called C");
-            if (FollowThePath.checkPlayer == 1)
-            {
-                Debug.Log("This code is called 1-");
-                Data.answerPlayer1 += 10;
-            }
-            else if (FollowThePath.checkPlayer == 2)
-            {
-                Debug.Log("This code is called 2-");
-                Data.answerPlayer2 += 10;
-            }
-        }
-        else
-        {
-            if (FollowThePath.checkPlayer == 1)
-            {
-                Debug.Log("This code is called");
-                Data.answerPlayer1 -= 10;
-            }
-            else if (FollowThePath.checkPlayer == 2)
-            {
-                Debug.Log("This code is called");
-                Data.answerPlayer2 -= 10;
-            }
-        }
-    }
-
-    public void buttonAnswer4()
-    {
-        if (Data.answer == 4)
-        {
-            if (FollowThePath.checkPlayer == 1)
-            {
-                Data.answerPlayer1 += 10;
-            }
-            else if (FollowThePath.checkPlayer == 2)
-            {
-                Data.answerPlayer2 += 10;
-            }
-        }
-        else
-        {
-            if (FollowThePath.checkPlayer == 1)
-            {
-                Data.answerPlayer1 -= 10;
-            }
-            else if (FollowThePath.checkPlayer == 2)
-            {
-                Data.answerPlayer2 -= 10;
-            }
-        }
-    }
-    public void buttonAnswer5()
-    {
-        if (Data.answer == 5)
-        {
-            if (FollowThePath.checkPlayer == 1)
-            {
-                Data.answerPlayer1 += 10;
-            }
-            else if (FollowThePath.checkPlayer == 2)
-            {
-                Data.answerPlayer2 += 10;
-            }
-        }
-        else
-        {
-            if (FollowThePath.checkPlayer == 1)
-            {
-                Data.answerPlayer1 -= 10;
-            }
-            else if (FollowThePath.checkPlayer == 2)
-            {
-                Data.answerPlayer2 -= 10;
-            }
-        }
-    }
 
 }
