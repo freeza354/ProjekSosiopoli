@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eee2d5009c2f4f45a26bd6eccb03ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getAnswer: 3
+  getAnswer: 1
 --- !u!114 &114269491557539608
 MonoBehaviour:
   m_ObjectHideFlags: 1
