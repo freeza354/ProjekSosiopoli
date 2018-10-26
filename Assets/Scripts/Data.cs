@@ -9,6 +9,7 @@ public class Data : MonoBehaviour{
     private void Start()
     {
         answer = getAnswer;
+        Debug.Log("The answer value is : " + answer);
     }
 
 }

@@ -23,15 +23,13 @@ public class FollowThePath : MonoBehaviour
     [HideInInspector]
     public int waypointIndex = 0;
 
-    public static int randomAnswer, randomQuestion;
+    public static int randomAnswer, randomQuestion, checkPlayer;
     public static float timeRemaining, timeStart = 10f;
 
     public static bool timerLoop = false;
     public static bool nextPlayerTurn = false;
-    public bool moveAllowed = false;
-    public static bool CheckAnswerWhenTimeRunsOut1 = false, CheckAnswerWhenTimeRunsOut2 = false, CheckAnswerWhenTimeRunsOut3 = false, CheckAnswerWhenTimeRunsOut4 = false, CheckAnswerWhenTimeRunsOut5 = false;
 
-    private float questionTrigger = 0;
+    public bool moveAllowed = false;
 
     // Use this for initialization
     private void Start()
@@ -40,6 +38,7 @@ public class FollowThePath : MonoBehaviour
         transform.position = waypoints[waypointIndex].transform.position;
         timeRemaining = timeStart;
         popupParent.SetActive(false);
+        checkPlayer = 1;
     }
 
     // Update is called once per frame
@@ -53,12 +52,14 @@ public class FollowThePath : MonoBehaviour
 
         if (GameControl.turnOverPlayer1)
         {
+            checkPlayer = 1;
             StartCoroutine(InstansiateQuiz());
             GameControl.turnOverPlayer1 = false;
         }
 
         if (GameControl.turnOverPlayer2)
         {
+            checkPlayer = 2;
             StartCoroutine(InstansiateQuiz());
             GameControl.turnOverPlayer2 = false;
         }
@@ -75,25 +76,33 @@ public class FollowThePath : MonoBehaviour
 
         if (timeRemaining <= 0)
         {
-            timeRemaining = timeStart;
-            questionTrigger = 0;
+            timeRemaining = timeStart;            
             Destroy(questionTemporary);
             popupParent.SetActive(false);
 
-            if (CheckAnswerWhenTimeRunsOut1)
-            {
+            if (checkPlayer == 1)
+            {                
                 Data.answerPlayer1 -= 10;
+                Debug.Log("This code called min1 " + Data.answerPlayer1);
                 GameControl.turnOverPlayer1 = false;
             }
 
-            else if(CheckAnswerWhenTimeRunsOut2)
+            else if(checkPlayer == 2)
             {
-                Data.answerPlayer1 -= 10;
+                Data.answerPlayer2 -= 10;
+                Debug.Log("This code called min2 " + Data.answerPlayer2);
                 GameControl.turnOverPlayer2 = false;
             }
 
             dice.SetActive(true);
         }
+        //else
+        //{
+        //    if ()
+        //    {
+        //        Destroy(questionTemporary);
+        //    }
+        //}
 
     }
 
@@ -121,11 +130,6 @@ public class FollowThePath : MonoBehaviour
 
     IEnumerator InstansiateQuiz()
     {
-        if (GameControl.turnOverPlayer1)
-            CheckAnswerWhenTimeRunsOut1 = true;
-        else if(GameControl.turnOverPlayer2)
-            CheckAnswerWhenTimeRunsOut2 = true;
-
         randomQuestion = Random.Range(1, question.Length + 1);
         randomAnswer = Random.Range(1, 5);
         yield return new WaitForSeconds(0.75f);
