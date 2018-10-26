@@ -31,7 +31,7 @@ public class Data : MonoBehaviour{
             Player2Name = Player2.GetComponent<UnityEngine.UI.InputField>().text;
             Player2.SetActive(false);
             Player3.SetActive(true);
-            Debug.Log("This code activated 3" + Player2Name); 
+            Debug.Log("This code activated 2" + Player2Name); 
         }
         else if (Player3.activeInHierarchy)
         {

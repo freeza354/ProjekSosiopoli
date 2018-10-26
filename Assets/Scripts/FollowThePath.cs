@@ -65,6 +65,20 @@ public class FollowThePath : MonoBehaviour
             GameControl.turnOverPlayer2 = false;
         }
 
+        if (GameControl.turnOverPlayer3)
+        {
+            checkPlayer = 3;
+            StartCoroutine(InstansiateQuiz());
+            GameControl.turnOverPlayer3 = false;
+        }
+
+        if (GameControl.turnOverPlayer4)
+        {
+            checkPlayer = 4;
+            StartCoroutine(InstansiateQuiz());
+            GameControl.turnOverPlayer4 = false;
+        }
+
         questionTimer.value = CalculateSliderValue();
 
         if (questionOver)
@@ -83,6 +97,18 @@ public class FollowThePath : MonoBehaviour
             {
                 Debug.Log("This code called min2 " + Data.answerPlayer2);
                 GameControl.turnOverPlayer2 = false;
+            }
+
+            else if (checkPlayer == 3)
+            {
+                Debug.Log("This code called min2 " + Data.answerPlayer3);
+                GameControl.turnOverPlayer3 = false;
+            }
+
+            else if (checkPlayer == 4)
+            {
+                Debug.Log("This code called min2 " + Data.answerPlayer4);
+                GameControl.turnOverPlayer4 = false;
             }
 
             dice.SetActive(true);
@@ -113,6 +139,20 @@ public class FollowThePath : MonoBehaviour
             else if(checkPlayer == 2)
             {
                 Data.answerPlayer2 -= 10;
+                Debug.Log("This code called min2 " + Data.answerPlayer2);
+                GameControl.turnOverPlayer2 = false;
+            }
+
+            else if (checkPlayer == 3)
+            {
+                Data.answerPlayer3 -= 10;
+                Debug.Log("This code called min2 " + Data.answerPlayer2);
+                GameControl.turnOverPlayer2 = false;
+            }
+
+            else if (checkPlayer == 4)
+            {
+                Data.answerPlayer4 -= 10;
                 Debug.Log("This code called min2 " + Data.answerPlayer2);
                 GameControl.turnOverPlayer2 = false;
             }
