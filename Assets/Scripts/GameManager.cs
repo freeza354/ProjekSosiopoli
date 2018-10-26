@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
 
         scorePlayer1Text.text = "" + Data.answerPlayer1;
         scoreplayer2Text.text = "" + Data.answerPlayer2;
-
+        GameControl.player1MoveText.text = Data.Player1Name + "'s Move";
+        GameControl.player2MoveText.text = Data.Player2Name + "'s Move";
 	}
 }

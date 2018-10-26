@@ -3,7 +3,9 @@ using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour {
 
-    private static GameObject whoWinsTextShadow, player1MoveText, player2MoveText;
+    private static GameObject whoWinsTextShadow;
+
+    public static Text player1MoveText, player2MoveText;
 
     private static GameObject player1, player2;
 
@@ -18,8 +20,8 @@ public class GameControl : MonoBehaviour {
     void Start () {
 
         whoWinsTextShadow = GameObject.Find("WhoWinsText");
-        player1MoveText = GameObject.Find("Player1MoveText");
-        player2MoveText = GameObject.Find("Player2MoveText");
+        player1MoveText = GameObject.Find("Player1MoveText").GetComponent<UnityEngine.UI.Text>();
+        player2MoveText = GameObject.Find("Player2MoveText").GetComponent<UnityEngine.UI.Text>();
 
         player1 = GameObject.Find("Player1");
         player2 = GameObject.Find("Player2");
@@ -58,6 +60,7 @@ public class GameControl : MonoBehaviour {
         if (player1.GetComponent<FollowThePath>().waypointIndex == 
             player1.GetComponent<FollowThePath>().waypoints.Length)
         {
+            player1StartWaypoint = 0;
             /*whoWinsTextShadow.gameObject.SetActive(true);
             whoWinsTextShadow.GetComponent<Text>().text = "Player 1 Wins";
             gameOver = true;*/
@@ -67,6 +70,7 @@ public class GameControl : MonoBehaviour {
         if (player2.GetComponent<FollowThePath>().waypointIndex ==
             player2.GetComponent<FollowThePath>().waypoints.Length)
         {
+            player2StartWaypoint = 0;
             /*
             whoWinsTextShadow.gameObject.SetActive(true);
             player1MoveText.gameObject.SetActive(false);
