@@ -2359,8 +2359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89eb6cfc89eb01748bcddda1a7a2b5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scorePlayer1: {fileID: 463669856}
-  scorePlayer2: {fileID: 1805738458}
 --- !u!4 &874268003
 Transform:
   m_ObjectHideFlags: 0
@@ -3291,6 +3289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1461074961}
   - component: {fileID: 1461074960}
+  - component: {fileID: 1461074962}
   m_Layer: 0
   m_Name: Background Board
   m_TagString: Untagged
@@ -3355,6 +3354,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1461074962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1461074959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5293ccc8d26e3654e939e7a21303a6ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorePlayer1Text: {fileID: 463669856}
+  scoreplayer2Text: {fileID: 1805738458}
 --- !u!1 &1467681896
 GameObject:
   m_ObjectHideFlags: 0
