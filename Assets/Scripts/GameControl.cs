@@ -141,7 +141,6 @@ public class GameControl : MonoBehaviour {
             case 1:
                 player1.GetComponent<FollowThePath>().moveAllowed = true;
                 break;
-
             case 2:
                 player2.GetComponent<FollowThePath>().moveAllowed = true;
                 break;

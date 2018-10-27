@@ -33,14 +33,26 @@ public class Dice : MonoBehaviour {
         }
 
         GameControl.diceSideThrown = randomDiceSide + 1;
+
         if (whosTurn == 1)
         {
             GameControl.MovePlayer(1);
-        } else if (whosTurn == -1)
+        }
+        else if (whosTurn == 2)
         {
             GameControl.MovePlayer(2);
         }
-        whosTurn *= -1;
+        else if (whosTurn == 3)
+        {
+            GameControl.MovePlayer(3);
+        }
+        else if (whosTurn == 4)
+        {
+            GameControl.MovePlayer(4);
+            whosTurn = 0;
+        }
+
+        whosTurn += 1;
         coroutineAllowed = true;
     }
 }
