@@ -93,7 +93,8 @@ public class GameControl : MonoBehaviour {
             /*whoWinsTextShadow.gameObject.SetActive(true);
             whoWinsTextShadow.GetComponent<Text>().text = "Player 1 Wins";
             gameOver = true;*/
-            //player1.GetComponent<FollowThePath>().waypointIndex = 0;
+            player1.GetComponent<FollowThePath>().waypointIndex = 0;
+            player1StartWaypoint = 0;
         }
 
         if (player2.GetComponent<FollowThePath>().waypointIndex ==
@@ -105,7 +106,8 @@ public class GameControl : MonoBehaviour {
             player2MoveText.gameObject.SetActive(false);
             whoWinsTextShadow.GetComponent<Text>().text = "Player 2 Wins";
             gameOver = true;*/
-            //player2.GetComponent<FollowThePath>().waypointIndex = 0;
+            player2.GetComponent<FollowThePath>().waypointIndex = 0;
+            player2StartWaypoint = 0;
         }
 
         if (player3.GetComponent<FollowThePath>().waypointIndex ==
@@ -117,7 +119,8 @@ public class GameControl : MonoBehaviour {
             player2MoveText.gameObject.SetActive(false);
             whoWinsTextShadow.GetComponent<Text>().text = "Player 2 Wins";
             gameOver = true;*/
-            //player2.GetComponent<FollowThePath>().waypointIndex = 0;
+            player3.GetComponent<FollowThePath>().waypointIndex = 0;
+            player3StartWaypoint = 0;
         }
         
         if (player4.GetComponent<FollowThePath>().waypointIndex ==
@@ -129,7 +132,8 @@ public class GameControl : MonoBehaviour {
             player2MoveText.gameObject.SetActive(false);
             whoWinsTextShadow.GetComponent<Text>().text = "Player 2 Wins";
             gameOver = true;*/
-            //player2.GetComponent<FollowThePath>().waypointIndex = 0;
+            player4.GetComponent<FollowThePath>().waypointIndex = 0;
+            player4StartWaypoint = 0;
         }
 
 

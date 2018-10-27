@@ -147,14 +147,14 @@ public class FollowThePath : MonoBehaviour
             {
                 Data.answerPlayer3 -= 10;
                 Debug.Log("This code called min2 " + Data.answerPlayer2);
-                GameControl.turnOverPlayer2 = false;
+                GameControl.turnOverPlayer3 = false;
             }
 
             else if (checkPlayer == 4)
             {
                 Data.answerPlayer4 -= 10;
                 Debug.Log("This code called min2 " + Data.answerPlayer2);
-                GameControl.turnOverPlayer2 = false;
+                GameControl.turnOverPlayer4 = false;
             }
 
             dice.SetActive(true);
