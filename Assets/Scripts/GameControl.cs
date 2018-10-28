@@ -8,7 +8,7 @@ public class GameControl : MonoBehaviour {
     public static Text player1MoveText, player2MoveText, player3MoveText, player4MoveText;
 
     private static GameObject player1, player2, player3, player4;
-
+    
     public static int diceSideThrown = 0;
     public static int player1StartWaypoint = 0;
     public static int player2StartWaypoint = 0;

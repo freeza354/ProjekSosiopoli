@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class Data : MonoBehaviour{
 
     public static int answer;
-    public static int answerPlayer1 = 0, answerPlayer2 = 0, answerPlayer3 = 0, answerPlayer4 = 0;
+    public static int answerPlayer1 = 250, answerPlayer2 = 250, answerPlayer3 = 250, answerPlayer4 = 250;
     public int getAnswer;
     
     public static string Player1Name, Player2Name, Player3Name, Player4Name, PlayerNametemp;    
@@ -52,22 +52,26 @@ public class Data : MonoBehaviour{
         {
             if (FollowThePath.checkPlayer == 1)
             {
-                answerPlayer1 += 10;
+                answerPlayer1 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
-                answerPlayer2 += 10;
+                answerPlayer2 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
-                answerPlayer3 += 10;
+                answerPlayer3 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
-                answerPlayer4 += 10;
+                answerPlayer4 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
         }
@@ -76,21 +80,25 @@ public class Data : MonoBehaviour{
             if (FollowThePath.checkPlayer == 1)
             {
                 answerPlayer1 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
                 answerPlayer2 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
                 answerPlayer3 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
                 answerPlayer4 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
         }
@@ -102,22 +110,26 @@ public class Data : MonoBehaviour{
         {
             if (FollowThePath.checkPlayer == 1)
             {
-                answerPlayer1 += 10;
+                answerPlayer1 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
-                answerPlayer2 += 10;
+                answerPlayer2 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
-                answerPlayer3 += 10;
+                answerPlayer3 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
-                answerPlayer4 += 10;
+                answerPlayer4 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
         }
@@ -126,21 +138,25 @@ public class Data : MonoBehaviour{
             if (FollowThePath.checkPlayer == 1)
             {
                 answerPlayer1 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
                 answerPlayer2 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
                 answerPlayer1 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
                 answerPlayer2 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
         }
@@ -152,22 +168,26 @@ public class Data : MonoBehaviour{
         {
             if (FollowThePath.checkPlayer == 1)
             {
-                answerPlayer1 += 10;
+                answerPlayer1 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
-                answerPlayer2 += 10;
+                answerPlayer2 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
-                answerPlayer3 += 10;
+                answerPlayer3 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
-                answerPlayer4 += 10;
+                answerPlayer4 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
         }
@@ -176,21 +196,25 @@ public class Data : MonoBehaviour{
             if (FollowThePath.checkPlayer == 1)
             {
                 answerPlayer1 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
                 answerPlayer2 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
                 answerPlayer3 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
                 answerPlayer4 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
         }
@@ -202,22 +226,26 @@ public class Data : MonoBehaviour{
         {
             if (FollowThePath.checkPlayer == 1)
             {
-                answerPlayer1 += 10;
+                answerPlayer1 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
-                answerPlayer2 += 10;
+                answerPlayer2 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
-                answerPlayer3 += 10;
+                answerPlayer3 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
-                answerPlayer4 += 10;
+                answerPlayer4 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
         }
@@ -226,21 +254,25 @@ public class Data : MonoBehaviour{
             if (FollowThePath.checkPlayer == 1)
             {
                 answerPlayer1 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
                 answerPlayer2 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
                 answerPlayer3 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
                 answerPlayer4 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
         }
@@ -251,22 +283,26 @@ public class Data : MonoBehaviour{
         {
             if (FollowThePath.checkPlayer == 1)
             {
-                answerPlayer1 += 10;
+                answerPlayer1 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
-                answerPlayer2 += 10;
+                answerPlayer2 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
-                answerPlayer3 += 10;
+                answerPlayer3 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
-                answerPlayer4 += 10;
+                answerPlayer4 += 25;
+                GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
         }
@@ -275,21 +311,25 @@ public class Data : MonoBehaviour{
             if (FollowThePath.checkPlayer == 1)
             {
                 answerPlayer1 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
                 answerPlayer2 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
                 answerPlayer3 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
                 answerPlayer4 -= 10;
+                GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
         }
