@@ -5,6 +5,7 @@ public class Data : MonoBehaviour{
 
     public static int answer;
     public static int answerPlayer1 = 250, answerPlayer2 = 250, answerPlayer3 = 250, answerPlayer4 = 250;
+    public static bool Player1Lose = false, Player2Lose = false, Player3Lose = false, Player4Lose = false;
     public int getAnswer;
     
     public static string Player1Name, Player2Name, Player3Name, Player4Name, PlayerNametemp;    
@@ -16,6 +17,29 @@ public class Data : MonoBehaviour{
         answer = getAnswer;
         Debug.Log("The answer value is : " + answer);
     }
+
+    private void Update()
+    {
+        if (answerPlayer1 <= 0)
+        {
+            Player1Lose = true;
+        }
+
+        if(answerPlayer2 <= 0)
+        {
+            Player2Lose = true;
+        }
+
+        if (answerPlayer3 <= 0)
+        {
+            Player3Lose = true;
+        }
+
+        if(answerPlayer4 <= 0)
+        {
+            Player4Lose = true;
+        }
+    }    
 
     public void Set_Text()
     {
@@ -42,6 +66,7 @@ public class Data : MonoBehaviour{
         }
         else if (Player4.activeInHierarchy)
         {
+            Player4Name = Player4.GetComponent<UnityEngine.UI.InputField>().text;
             SceneManager.LoadScene("SampleScene");
         }
     }
@@ -52,25 +77,25 @@ public class Data : MonoBehaviour{
         {
             if (FollowThePath.checkPlayer == 1)
             {
-                answerPlayer1 += 25;
+                answerPlayer1 += (25 + WaypointData.pointBenar[GameControl.player1StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
-                answerPlayer2 += 25;
+                answerPlayer2 += (25 + WaypointData.pointBenar[GameControl.player2StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
-                answerPlayer3 += 25;
+                answerPlayer3 += (25 + WaypointData.pointBenar[GameControl.player3StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
-                answerPlayer4 += 25;
+                answerPlayer4 += (25 + WaypointData.pointBenar[GameControl.player4StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
@@ -79,25 +104,25 @@ public class Data : MonoBehaviour{
         {
             if (FollowThePath.checkPlayer == 1)
             {
-                answerPlayer1 -= 10;
+                answerPlayer1 -= (10 + WaypointData.pointSalah[GameControl.player1StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
-                answerPlayer2 -= 10;
+                answerPlayer2 -= (10 + WaypointData.pointSalah[GameControl.player2StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
-                answerPlayer3 -= 10;
+                answerPlayer3 -= (10 + WaypointData.pointSalah[GameControl.player3StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
-                answerPlayer4 -= 10;
+                answerPlayer4 -= (10 + WaypointData.pointSalah[GameControl.player4StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
@@ -110,25 +135,25 @@ public class Data : MonoBehaviour{
         {
             if (FollowThePath.checkPlayer == 1)
             {
-                answerPlayer1 += 25;
+                answerPlayer1 += (25 + WaypointData.pointBenar[GameControl.player1StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
-                answerPlayer2 += 25;
+                answerPlayer2 += (25 + WaypointData.pointBenar[GameControl.player2StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
-                answerPlayer3 += 25;
+                answerPlayer3 += (25 + WaypointData.pointBenar[GameControl.player3StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
-                answerPlayer4 += 25;
+                answerPlayer4 += (25 + WaypointData.pointBenar[GameControl.player4StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
@@ -137,25 +162,25 @@ public class Data : MonoBehaviour{
         {
             if (FollowThePath.checkPlayer == 1)
             {
-                answerPlayer1 -= 10;
+                answerPlayer1 -= (10 + WaypointData.pointSalah[GameControl.player1StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
-                answerPlayer2 -= 10;
+                answerPlayer2 -= (10 + WaypointData.pointSalah[GameControl.player2StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
-                answerPlayer1 -= 10;
+                answerPlayer3 -= (10 + WaypointData.pointSalah[GameControl.player3StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
-                answerPlayer2 -= 10;
+                answerPlayer4 -= (10 + WaypointData.pointSalah[GameControl.player4StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
@@ -168,25 +193,25 @@ public class Data : MonoBehaviour{
         {
             if (FollowThePath.checkPlayer == 1)
             {
-                answerPlayer1 += 25;
+                answerPlayer1 += (25 + WaypointData.pointBenar[GameControl.player1StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
-                answerPlayer2 += 25;
+                answerPlayer2 += (25 + WaypointData.pointBenar[GameControl.player2StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
-                answerPlayer3 += 25;
+                answerPlayer3 += (25 + WaypointData.pointBenar[GameControl.player3StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
-                answerPlayer4 += 25;
+                answerPlayer4 += (25 + WaypointData.pointBenar[GameControl.player4StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
@@ -195,25 +220,25 @@ public class Data : MonoBehaviour{
         {
             if (FollowThePath.checkPlayer == 1)
             {
-                answerPlayer1 -= 10;
+                answerPlayer1 -= (10 + WaypointData.pointSalah[GameControl.player1StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
-                answerPlayer2 -= 10;
+                answerPlayer2 -= (10 + WaypointData.pointSalah[GameControl.player2StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
-                answerPlayer3 -= 10;
+                answerPlayer3 -= (10 + WaypointData.pointSalah[GameControl.player3StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
-                answerPlayer4 -= 10;
+                answerPlayer4 -= (10 + WaypointData.pointSalah[GameControl.player4StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
@@ -226,25 +251,25 @@ public class Data : MonoBehaviour{
         {
             if (FollowThePath.checkPlayer == 1)
             {
-                answerPlayer1 += 25;
+                answerPlayer1 += (25 + WaypointData.pointBenar[GameControl.player1StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
-                answerPlayer2 += 25;
+                answerPlayer2 += (25 + WaypointData.pointBenar[GameControl.player2StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
-                answerPlayer3 += 25;
+                answerPlayer3 += (25 + WaypointData.pointBenar[GameControl.player3StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
-                answerPlayer4 += 25;
+                answerPlayer4 += (25 + WaypointData.pointBenar[GameControl.player4StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
@@ -253,25 +278,25 @@ public class Data : MonoBehaviour{
         {
             if (FollowThePath.checkPlayer == 1)
             {
-                answerPlayer1 -= 10;
+                answerPlayer1 -= (10 + WaypointData.pointSalah[GameControl.player1StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
-                answerPlayer2 -= 10;
+                answerPlayer2 -= (10 + WaypointData.pointSalah[GameControl.player2StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
-                answerPlayer3 -= 10;
+                answerPlayer3 -= (10 + WaypointData.pointSalah[GameControl.player3StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
-                answerPlayer4 -= 10;
+                answerPlayer4 -= (10 + WaypointData.pointSalah[GameControl.player4StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
@@ -283,25 +308,25 @@ public class Data : MonoBehaviour{
         {
             if (FollowThePath.checkPlayer == 1)
             {
-                answerPlayer1 += 25;
+                answerPlayer1 += (25 + WaypointData.pointBenar[GameControl.player1StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
-                answerPlayer2 += 25;
+                answerPlayer2 += (25 + WaypointData.pointBenar[GameControl.player2StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
-                answerPlayer3 += 25;
+                answerPlayer3 += (25 + WaypointData.pointBenar[GameControl.player3StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
-                answerPlayer4 += 25;
+                answerPlayer4 += (25 + WaypointData.pointBenar[GameControl.player4StartWaypoint]);
                 GameManager.CorrectAnswer();
                 FollowThePath.questionOver = true;
             }
@@ -310,25 +335,25 @@ public class Data : MonoBehaviour{
         {
             if (FollowThePath.checkPlayer == 1)
             {
-                answerPlayer1 -= 10;
+                answerPlayer1 -= (10 + WaypointData.pointSalah[GameControl.player1StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 2)
             {
-                answerPlayer2 -= 10;
+                answerPlayer2 -= (10 + WaypointData.pointSalah[GameControl.player2StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 3)
             {
-                answerPlayer3 -= 10;
+                answerPlayer3 -= (10 + WaypointData.pointSalah[GameControl.player3StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }
             else if (FollowThePath.checkPlayer == 4)
             {
-                answerPlayer4 -= 10;
+                answerPlayer4 -= (10 + WaypointData.pointSalah[GameControl.player4StartWaypoint]);
                 GameManager.WrongAnswer();
                 FollowThePath.questionOver = true;
             }

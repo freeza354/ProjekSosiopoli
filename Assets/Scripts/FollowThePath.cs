@@ -24,11 +24,13 @@ public class FollowThePath : MonoBehaviour
     public int waypointIndex = 0;
 
     public static int randomAnswer, randomQuestion, checkPlayer;
-    public static float timeRemaining, timeStart = 40f;
+    public static float timeRemaining, timeStart = 250f;
 
     public static bool timerLoop = false;
     public static bool nextPlayerTurn = false;
     public static bool questionOver = false;
+
+    private bool[] firstMove = new bool[4];  
 
     public bool moveAllowed = false;
 
@@ -40,6 +42,12 @@ public class FollowThePath : MonoBehaviour
         timeRemaining = timeStart;
         popupParent.SetActive(false);
         checkPlayer = 1;
+
+        for(int i = 0; i < 4; i++)
+        {
+            firstMove[i] = true;
+        }
+
     }
 
     // Update is called once per frame
@@ -47,35 +55,91 @@ public class FollowThePath : MonoBehaviour
     {
         if (moveAllowed)
         {
-            dice.SetActive(false);
+            //dice.SetActive(false);
             Move();
         }
 
         if (GameControl.turnOverPlayer1)
         {
             checkPlayer = 1;
-            StartCoroutine(InstansiateQuiz());
+            dice.SetActive(false);
+            if(GameControl.player1StartWaypoint == 27)
+            {
+                Data.answerPlayer1 -= 5;
+                questionOver = true;
+            }
+            else if (GameControl.player1StartWaypoint == 9)
+            {
+                Data.answerPlayer1 += 5;
+                questionOver = true;
+            }
+            else
+            {
+                StartCoroutine(InstansiateQuiz());
+            }
             GameControl.turnOverPlayer1 = false;
         }
 
         if (GameControl.turnOverPlayer2)
         {
             checkPlayer = 2;
-            StartCoroutine(InstansiateQuiz());
+            dice.SetActive(false);
+            if (GameControl.player2StartWaypoint == 27)
+            {
+                Data.answerPlayer2 -= 5;
+                questionOver = true;
+            }
+            else if (GameControl.player2StartWaypoint == 9)
+            {
+                Data.answerPlayer2 += 5;
+                questionOver = true;
+            }
+            else
+            {
+                StartCoroutine(InstansiateQuiz());
+            }
             GameControl.turnOverPlayer2 = false;
         }
 
         if (GameControl.turnOverPlayer3)
         {
             checkPlayer = 3;
-            StartCoroutine(InstansiateQuiz());
+            dice.SetActive(false);
+            if (GameControl.player3StartWaypoint == 27)
+            {
+                Data.answerPlayer3 -= 5;
+                questionOver = true;
+            }
+            else if (GameControl.player3StartWaypoint == 9)
+            {
+                Data.answerPlayer3 += 5;
+                questionOver = true;
+            }
+            else
+            {
+                StartCoroutine(InstansiateQuiz());
+            }
             GameControl.turnOverPlayer3 = false;
         }
 
         if (GameControl.turnOverPlayer4)
         {
             checkPlayer = 4;
-            StartCoroutine(InstansiateQuiz());
+            dice.SetActive(false);
+            if (GameControl.player4StartWaypoint == 27)
+            {
+                Data.answerPlayer4 -= 5;
+                questionOver = true;
+            }
+            else if (GameControl.player4StartWaypoint == 9)
+            {
+                Data.answerPlayer4 += 5;
+                questionOver = true;
+            }
+            else
+            {
+                StartCoroutine(InstansiateQuiz());
+            }
             GameControl.turnOverPlayer4 = false;
         }
 
@@ -89,39 +153,32 @@ public class FollowThePath : MonoBehaviour
             
             if (checkPlayer == 1)
             {
-                Debug.Log("This code called min1 " + Data.answerPlayer1);
                 GameControl.turnOverPlayer1 = false;
             }
 
             else if (checkPlayer == 2)
             {
-                Debug.Log("This code called min2 " + Data.answerPlayer2);
                 GameControl.turnOverPlayer2 = false;
             }
 
             else if (checkPlayer == 3)
             {
-                Debug.Log("This code called min2 " + Data.answerPlayer3);
                 GameControl.turnOverPlayer3 = false;
             }
 
             else if (checkPlayer == 4)
             {
-                Debug.Log("This code called min2 " + Data.answerPlayer4);
                 GameControl.turnOverPlayer4 = false;
             }
 
             dice.SetActive(true);
-
             ResetTimer();
-
-            Debug.Log("Is this called?");
 
         }
 
         if (timerLoop && popupParent.activeInHierarchy)
         {
-            timeRemaining -= Time.deltaTime;
+            timeRemaining -= Time.fixedDeltaTime;
             if (timeRemaining < 0)
                 timerLoop = false;
         }
@@ -132,28 +189,28 @@ public class FollowThePath : MonoBehaviour
             if (checkPlayer == 1)
             {                
                 Data.answerPlayer1 -= 10;
-                Debug.Log("This code called min1 " + Data.answerPlayer1);
+                GameManager.WrongAnswer();
                 GameControl.turnOverPlayer1 = false;
             }
 
             else if(checkPlayer == 2)
             {
                 Data.answerPlayer2 -= 10;
-                Debug.Log("This code called min2 " + Data.answerPlayer2);
+                GameManager.WrongAnswer();
                 GameControl.turnOverPlayer2 = false;
             }
 
             else if (checkPlayer == 3)
             {
                 Data.answerPlayer3 -= 10;
-                Debug.Log("This code called min2 " + Data.answerPlayer2);
+                GameManager.WrongAnswer();
                 GameControl.turnOverPlayer3 = false;
             }
 
             else if (checkPlayer == 4)
             {
                 Data.answerPlayer4 -= 10;
-                Debug.Log("This code called min2 " + Data.answerPlayer2);
+                GameManager.WrongAnswer();
                 GameControl.turnOverPlayer4 = false;
             }
 
@@ -183,10 +240,14 @@ public class FollowThePath : MonoBehaviour
         if (transform.position == waypoints[waypointIndex].transform.position)
         {
             waypointIndex += 1;
-        }
-        if (waypointIndex == waypoints.Length)
-        {
-            waypointIndex = 0;
+            if(firstMove[GameControl.turnGame - 1] == true)
+            {
+                firstMove[GameControl.turnGame  - 1] = false;
+            }
+            else 
+            {
+                GameControl.diceSideThrown--;
+            }
         }
 
     }
@@ -194,6 +255,12 @@ public class FollowThePath : MonoBehaviour
     public float CalculateSliderValue()
     {
         return (timeRemaining / timeStart);
+    }
+
+    IEnumerator QuizTimer()
+    {
+        yield return new WaitForSeconds(1f);
+        timeRemaining--;
     }
 
     IEnumerator InstansiateQuiz()

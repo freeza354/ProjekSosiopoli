@@ -3,10 +3,12 @@ using UnityEngine;
 
 public class Dice : MonoBehaviour {
 
-    private Sprite[] diceSides;
-    private SpriteRenderer rend;
-    private int whosTurn = 1;
+    private static Sprite[] diceSides;
+    private static SpriteRenderer rend;
+    public static int whosTurn = 1;
     private bool coroutineAllowed = true;
+
+    public int diceVal;
 
 	// Use this for initialization
 	private void Start () {
@@ -20,6 +22,18 @@ public class Dice : MonoBehaviour {
         if (!GameControl.gameOver && coroutineAllowed)
             StartCoroutine("RollTheDice");
     }
+
+    //public IEnumerator DiceRollAnim()
+    //{
+    //    Debug.Log("this function called");
+    //    for (int i = 0; i <= 20; i++)
+    //    {
+    //        diceVal = Random.Range(0, 6);
+    //        rend.sprite = diceSides[diceVal];
+    //        yield return new WaitForSeconds(0.05f);
+    //    }
+        
+    //}
 
     private IEnumerator RollTheDice()
     {
